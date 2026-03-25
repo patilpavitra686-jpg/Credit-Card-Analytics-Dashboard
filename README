@@ -1,21 +1,26 @@
-📌 Project Overview
-This project is an end-to-end Credit Card Analytics Solution developed using Power BI and PostgreSQL.
+## Project Overview
+This project is an end-to-end Credit Card Analytics Solution developed using **Power BI and PostgreSQL**.
 It analyzes customer transactions, revenue trends, and behavior through interactive dashboards.
-The project includes:
+
+##The project includes:
 📊 Transaction Report Dashboard
 👥 Customer Analysis Dashboard
-🎯 Objectives
-Analyze revenue and transaction trends
-Perform customer segmentation
-Build interactive dashboards for insights
-Enable data-driven decision making
-🔗 Data Source & Integration
+
+##🎯 Objectives
+-Analyze revenue and transaction trends
+-Perform customer segmentation
+-Build interactive dashboards for insights
+-Enable data-driven decision making
+
+##🔗 Data Source & Integration
 Connected PostgreSQL database with Power BI
 Imported CSV data into PostgreSQL
 Performed data transformation using Power Query
 Created relationships between tables
-🗄️ Database Setup (PostgreSQL)
-📌 Transaction Table
+
+##🗄️ Database Setup (PostgreSQL)
+
+###📌 Transaction Table
 SQL
 CREATE TABLE cc_detail (
     col1 TEXT, col2 TEXT, col3 TEXT, col4 TEXT, col5 TEXT,
@@ -23,11 +28,13 @@ CREATE TABLE cc_detail (
     col10 TEXT, col11 TEXT, col12 TEXT, col13 TEXT,
     col14 TEXT, col15 TEXT, col16 TEXT, col17 TEXT, col18 TEXT
 );
+
 SQL
 COPY cc_detail
 FROM 'C:/credit_card.csv'
 DELIMITER ','
 CSV HEADER;
+
 SQL
 ALTER TABLE cc_detail RENAME COLUMN col1 TO client_num;
 ALTER TABLE cc_detail RENAME COLUMN col2 TO card_category;
@@ -42,7 +49,9 @@ ALTER TABLE cc_detail RENAME COLUMN col10 TO current_debt;
 ALTER TABLE cc_detail RENAME COLUMN col11 TO credit_limit;
 ALTER TABLE cc_detail RENAME COLUMN col12 TO total_revolving_bal;
 ALTER TABLE cc_detail RENAME COLUMN col13 TO total_trans_amt;
-📌 Customer Table
+
+
+###📌 Customer Table
 SQL
 CREATE TABLE cust_detail (
     client_num TEXT,
@@ -61,15 +70,18 @@ CREATE TABLE cust_detail (
     income INT,
     cust_satisfaction_score INT
 );
+
 SQL
 COPY cust_detail
-FROM 'C:/Users/RAJU/OneDrive/Desktop/power bi/customer.csv'
+FROM 'C:/customer.csv'
 DELIMITER ','
 CSV HEADER;
-🔗 Data Modeling
+
+###🔗 Data Modeling
 Connected cc_detail and cust_detail using client_num
 Built relationships in Power BI for combined analysis
-📊 DAX Calculations
+
+###📊 DAX Calculations
 🔹 Age Group
 Dax
 AgeGroup =
@@ -82,6 +94,7 @@ SWITCH(
     'public cust_detail'[customer_age] >= 60, "60+",
     "Unknown"
 )
+
 🔹 Income Group
 Dax
 IncomeGroup =
@@ -92,15 +105,18 @@ SWITCH(
     'public cust_detail'[income] >= 70000, "High",
     "Unknown"
 )
+
 🔹 Revenue
 Dax
 Revenue =
 'public cc_detail'[annual_fees] +
 'public cc_detail'[total_trans_amt] +
 'public cc_detail'[interest_earned]
+
 🔹 Week Number
 Dax
 week_num2 = WEEKNUM('public cc_detail'[week_start_date])
+
 🔹 Current Week Revenue
 Dax
 Current_week_Revenue =
@@ -112,6 +128,7 @@ CALCULATE(
         MAX('public cc_detail'[week_num2])
     )
 )
+
 🔹 Previous Week Revenue
 Dax
 Previous_week_Revenue =
@@ -123,6 +140,7 @@ CALCULATE(
         MAX('public cc_detail'[week_num2]) - 1
     )
 )
+
 🔹 Week-over-Week Growth
 Dax
 wow_revenue =
@@ -130,41 +148,48 @@ DIVIDE(
     [Current_week_Revenue] - [Previous_week_Revenue],
     [Previous_week_Revenue]
 )
-📸 Dashboard Screenshots
+
+###📸 Dashboard Screenshots
 Transaction Dashboard
 �
 Customer Dashboard
 �
-⚙️ Features
+
+##⚙️ Features
 KPI Cards (Revenue, Transactions, Customers)
 Customer segmentation (Age, Income)
 Revenue analysis by category, job, education
 Weekly trend analysis
 Interactive filters (slicers)
-🛠️ Tools & Technologies
+
+##🛠️ Tools & Technologies
 Power BI
 PostgreSQL
 DAX
 Power Query
 SQL
 Excel
-💡 Key Insights
+
+##💡 Key Insights
 Revenue trends vary across quarters
 Customer income and age impact spending
 Certain card categories generate higher revenue
 Weekly trends show performance changes
-📚 Learning Outcomes
+
+##📚 Learning Outcomes
 Built end-to-end data analytics project
 Connected PostgreSQL with Power BI
 Created advanced DAX measures
 Performed data modeling and transformation
 Generated business insights
-🔥 Project Highlights
+
+##🔥 Project Highlights
 Designed relational database schema
 Implemented advanced DAX calculations
 Built interactive dashboards for analysis
 Performed real-world data preprocessing
-🚀 How to Run
+
+##🚀 How to Run
 Import dataset into PostgreSQL
 Open Power BI (.pbix file)
 Connect to database
