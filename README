@@ -150,10 +150,12 @@ DIVIDE(
 )
 
 ###📸 Dashboard Screenshots
-Transaction Dashboard
-�
-Customer Dashboard
-�
+##Transaction Dashboard
+![Dashboard](dashboard1.png)
+
+#Customer Dashboard
+![Dashboard](dashboard2.png)
+
 
 ##⚙️ Features
 KPI Cards (Revenue, Transactions, Customers)
