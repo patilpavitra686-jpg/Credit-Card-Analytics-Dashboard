@@ -149,13 +149,13 @@ DIVIDE(
     [Previous_week_Revenue]
 )
 
-###📸 Dashboard Screenshots
-##Transaction Dashboard
+## 📸 Dashboard Screenshots
+
+### 📊 Transaction Dashboard
 ![Dashboard](dashboard1.png)
 
-#Customer Dashboard
+### 👥 Customer Dashboard
 ![Dashboard](dashboard2.png)
-
 
 ##⚙️ Features
 KPI Cards (Revenue, Transactions, Customers)
