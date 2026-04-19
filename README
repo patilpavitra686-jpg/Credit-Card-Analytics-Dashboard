@@ -3,8 +3,8 @@ This project is an end-to-end Credit Card Analytics Solution developed using **P
 It analyzes customer transactions, revenue trends, and behavior through interactive dashboards.
 
 ##The project includes:
-📊 Transaction Report Dashboard
-👥 Customer Analysis Dashboard
+ Transaction Report Dashboard
+ Customer Analysis Dashboard
 
 ## Objectives
 -Analyze revenue and transaction trends
@@ -12,15 +12,15 @@ It analyzes customer transactions, revenue trends, and behavior through interact
 -Build interactive dashboards for insights
 -Enable data-driven decision making
 
-##🔗 Data Source & Integration
+## Data Source & Integration
 Connected PostgreSQL database with Power BI
 Imported CSV data into PostgreSQL
 Performed data transformation using Power Query
 Created relationships between tables
 
-##🗄️ Database Setup (PostgreSQL)
+## Database Setup (PostgreSQL)
 
-###📌 Transaction Table
+### Transaction Table
 SQL
 CREATE TABLE cc_detail (
     col1 TEXT, col2 TEXT, col3 TEXT, col4 TEXT, col5 TEXT,
@@ -51,7 +51,7 @@ ALTER TABLE cc_detail RENAME COLUMN col12 TO total_revolving_bal;
 ALTER TABLE cc_detail RENAME COLUMN col13 TO total_trans_amt;
 
 
-###📌 Customer Table
+### Customer Table
 SQL
 CREATE TABLE cust_detail (
     client_num TEXT,
@@ -77,11 +77,11 @@ FROM 'C:/customer.csv'
 DELIMITER ','
 CSV HEADER;
 
-###🔗 Data Modeling
+### Data Modeling
 Connected cc_detail and cust_detail using client_num
 Built relationships in Power BI for combined analysis
 
-###📊 DAX Calculations
+### DAX Calculations
 🔹 Age Group
 Dax
 AgeGroup =
@@ -159,14 +159,14 @@ DIVIDE(
   <img src="dashboard2.png" width="900"/>
 </p>
 
-##⚙️ Features
+## Features
 KPI Cards (Revenue, Transactions, Customers)
 Customer segmentation (Age, Income)
 Revenue analysis by category, job, education
 Weekly trend analysis
 Interactive filters (slicers)
 
-##🛠️ Tools & Technologies
+## Tools & Technologies
 Power BI
 PostgreSQL
 DAX
@@ -174,26 +174,26 @@ Power Query
 SQL
 Excel
 
-##💡 Key Insights
+## Key Insights
 Revenue trends vary across quarters
 Customer income and age impact spending
 Certain card categories generate higher revenue
 Weekly trends show performance changes
 
-##📚 Learning Outcomes
+## Learning Outcomes
 Built end-to-end data analytics project
 Connected PostgreSQL with Power BI
 Created advanced DAX measures
 Performed data modeling and transformation
 Generated business insights
 
-##🔥 Project Highlights
+## Project Highlights
 Designed relational database schema
 Implemented advanced DAX calculations
 Built interactive dashboards for analysis
 Performed real-world data preprocessing
 
-##🚀 How to Run
+## How to Run
 Import dataset into PostgreSQL
 Open Power BI (.pbix file)
 Connect to database
